@@ -1,3 +1,4 @@
+//부드러운 스크롤을 위한 lenis
 
 const lenis = new Lenis()
 
@@ -8,6 +9,8 @@ gsap.ticker.add((time)=>{
 })
 
 gsap.ticker.lagSmoothing(0)
+
+//header 보이고 안보이게
 
 ScrollTrigger.create({
   trigger:"sc-intro .headline",
@@ -26,6 +29,10 @@ ScrollTrigger.create({
   end:"100% 100%",
   toggleClass:{targets:".sc-intro .icon-wrap",className:"on"}
 })
+
+//intro section 애니메이션
+
+
 const introTl = gsap.timeline({
   scrollTrigger:{
     trigger:".sc-intro",
@@ -44,6 +51,7 @@ introTl.to('.headline-area .headline .text3',{opacity:1,})
 introTl.to('.headline-area .headline .text3',{opacity:0,})
 introTl.to('.headline-area .headline .text4',{opacity:1,})
 
+//sc-bg 배경 및 글자 애니메이션 
 
 const bgTl = gsap.timeline({
   scrollTrigger:{
@@ -64,6 +72,8 @@ bgTl.to('.sc-bg-sticky .bg2',{height:0},)
 bgTl.to('.sc-bg-sticky .gradiant',{opacity:1},'c')
 bgTl.to('.sc-bg-sticky .desc',{opacity:1},'c')
 
+// sc-value 애니메이션
+
 const valueTl = gsap.timeline({
     scrollTrigger: {
       trigger: '.sc-value.layout2',
@@ -76,6 +86,8 @@ const valueTl = gsap.timeline({
 valueTl.to('.sc-value.layout2 .headline.left span',{xPercent:-172},'a')
 valueTl.to('.sc-value.layout2 .headline.right span',{xPercent:134},'a')
 valueTl.to('.sc-value.layout2 .bar',{width:'21%'},'a')
+
+//bg가 dark여야할 때 클래스 주기
 
 ScrollTrigger.create({
   trigger:`.bg-dark`,
@@ -91,7 +103,7 @@ ScrollTrigger.create({
 })
 
 
-
+//가로 스크롤 
 
 
 gsap.to('.sc-possible .horizental',{
@@ -107,6 +119,8 @@ gsap.to('.sc-possible .horizental',{
     return window.innerWidth;
 }
 })
+
+// sc-easy 애니메이션
 
 const easyTl = gsap.timeline({
   scrollTrigger:{
@@ -137,6 +151,7 @@ gsap.to('.sc-easy .text',{
   opacity:1
 })
 
+//sc-sage card 교체 애니메이션
 
 ScrollTrigger.create({
   trigger:'.sc-safe .area1-wrapper .area1-inner',
@@ -156,6 +171,8 @@ ScrollTrigger.create({
   end:"150% 100%",
   toggleClass:{targets:".sc-safe .area3 .card-item",className:"on"},
 })
+
+//카드 겹쳐지는 애니메이션 
 const cardTl1 = gsap.timeline({
   scrollTrigger: {
     trigger: '.sc-safe .area1-wrapper',
@@ -174,6 +191,8 @@ cardTl1.to('.sc-safe .horizental .card-list .card-item:nth-child(2)',{xPercent:-
 cardTl1.to('.sc-safe .horizental .card-list .card-item:nth-child(3)',{xPercent:-200},'a')
 cardTl1.to('.sc-safe .horizental .card-list .card-item:nth-child(4)',{xPercent:-300},'a')
 
+//card 안쪽 깜박이는 애니메이션
+
 const cardTl2 = gsap.timeline({
   scrollTrigger: {
     trigger: '.sc-safe .area1-wrapper',
@@ -186,6 +205,8 @@ cardTl2.to('.sc-safe .horizental .card-list .card-item.last .img-container .rock
 cardTl2.to('.sc-safe .horizental .card-list .card-item.last .img-container .unrock',{opacity:1})
 cardTl2.to('.sc-safe .horizental .card-list .card-item.last .img-container .unrock',{opacity:0})
 
+//text 나오는 애니메이션
+
 const cardTl3 = gsap.timeline({
   scrollTrigger: {
     trigger: '.sc-safe .area2-wrapper',
@@ -196,6 +217,8 @@ const cardTl3 = gsap.timeline({
 })
 cardTl3.to('.sc-safe .area2-wrapper .card-item .text',{opacity:1});
 
+
+//카드 겹쳐지고 텍스트 나오는 애니메이션 
 const cardTl4 = gsap.timeline({
   scrollTrigger: {
     trigger: '.sc-safe .area3',
@@ -210,7 +233,7 @@ cardTl4.to('.sc-safe .area3 .card-list .card-item:nth-child(4)',{xPercent:-300},
 cardTl4.to('.sc-safe .area3 .headline-area',{opacity:1})
 cardTl4.to('.sc-safe .area3 .card-list .card-item .gradiant',{opacity:1})
 
-
+//sc-global 애니메이션
 
 const globalTl = gsap.timeline({
   scrollTrigger: {
@@ -225,6 +248,8 @@ globalTl.to('.sc-global.layout2 .headline.left span',{xPercent:-114},'a')
 globalTl.to('.sc-global.layout2 .headline.right span',{xPercent:120},'a')
 globalTl.to('.sc-global.layout2 .bar',{width:'21%'},'a')
 
+
+//가로 스크롤 
 gsap.to('.sc-finance .horizental',{
   scrollTrigger:{
       trigger:".sc-finance",
@@ -238,6 +263,8 @@ gsap.to('.sc-finance .horizental',{
     return window.innerWidth;
 }
 })
+
+//sc-finance 애니메이션 
 ScrollTrigger.create({
   trigger:'.sc-finance',
   start:"50% 50%",
@@ -261,6 +288,8 @@ ScrollTrigger.create({
   }
 })
 
+//가로스크롤
+
 gsap.to('.sc-use .horizental',{
   scrollTrigger:{
       trigger:".sc-use",
@@ -275,6 +304,8 @@ gsap.to('.sc-use .horizental',{
 }
 })
 
+//sc-crator 텍스트영역 보이게
+
 gsap.to(".sc-creator .bg .text-area",{
   scrollTrigger: {
       trigger: '.sc-creator',
@@ -285,6 +316,7 @@ gsap.to(".sc-creator .bg .text-area",{
   opacity: 1,
 })
 
+//footer marquee-area on
 
 ScrollTrigger.create({
   trigger:'footer',
@@ -298,6 +330,7 @@ ScrollTrigger.create({
   }
 })
 
+//top버튼 보이고 안보이게
 
 let lastScroll = 0;
 $(window).scroll(function(){
@@ -316,10 +349,14 @@ $(window).scroll(function(){
       
 })
 
+//top버튼 동작
+
 fixEl = document.querySelector('.btn-top');
 fixEl.addEventListener('click',()=>{
   window.scrollTo({top:0,behavior:"smooth"})
 })
+
+//footer에서 top버튼 고정
 
 ScrollTrigger.create({
   trigger: ".footer",
